@@ -1,0 +1,20 @@
+{
+  "version": "3",
+  "chains": {
+    "jess": {
+      "chain": {
+        "class": "populus.chain.geth.LocalGethChain"
+      },
+      "web3": {
+        "provider": {
+          "class": "web3.providers.ipc.IPCProvider"
+        }
+      },
+      "contracts": {
+        "backends": {
+          "JSONFile": {"$ref": "contracts.backends.JSONFile"}
+        }
+      }
+    }
+  }
+}

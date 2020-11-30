@@ -1,0 +1,7 @@
+{
+  "name": "ML_Exchange",
+  "version": "1.0.0",
+  "dependencies": {
+    "solc": "^0.4.26"
+  }
+}

@@ -1,0 +1,3 @@
+Election Document
+
+Dataset type [latitude, longitude, democrat or republican]
