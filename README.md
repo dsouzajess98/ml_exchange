@@ -2,33 +2,15 @@
 
 Machine Learning algorithms are being developed and improved at an incredible rate, but are not necessarily getting more accessible to the broader community. Our model enables anyone to get access to high quality, objectively measured machine learning models. At Algorithmia, we believe that widespread access to algorithms and deployment solutions is going to be a fundamental building block of a balanced future for AI, and DanKu is a step towards that vision.
 
-The DanKu protocol utilizes blockchain technology via smart contracts. The contract allows anyone to post a data set, an evaluation function, and a monetary reward for anyone who can provide the best trained machine learning model for the data. Participants train deep neural networks to model the data, and submit their trained networks to the blockchain. The blockchain executes these neural network models to evaluate submissions, and ensure that payment goes to the best model.
+The DanKu protocol utilizes blockchain technology via smart contracts. We aim to improve this. The contract allows anyone to post a data set, an evaluation function, and a monetary reward for anyone who can provide the best trained machine learning model for the data. Participants train deep neural networks to model the data, and submit their trained networks to the blockchain. The blockchain executes these neural network models to evaluate submissions, and ensure that payment goes to the best model.
 
 
 
-## 0. Requirements
+## 1. Prerequisites
 
-To run the DanKu unittests, we first need to setup our local development environment. The following commands have been tested for OSX and Linux.
+The following commands have been tested for Linux.
 
-### 0.1. Installing the Solidity Compiler
-
-### For OSX
-
-Install a these homebrew packages:
-
-```
-brew install pkg-config libffi autoconf automake libtool openssl
-```
-
-Install the solidity compiler (solc):
-
-```
-brew update
-brew upgrade
-brew tap ethereum/ethereum
-brew install solidity
-brew link solidity
-```
+### 1.1. Installing the Solidity Compiler
 
 ### For Linux
 
@@ -38,7 +20,7 @@ sudo apt-get update
 sudo apt-get install solc libssl-dev
 ```
 
-### 0.2. Initialize your Virtual Environment
+### 1.2. Initialize your Virtual Environment
 
 Install [virtualenv](https://virtualenv.pypa.io/en/stable/) if you don't have it yet. (Comes installed with Python3.6)
 
@@ -51,7 +33,7 @@ source venv/bin/activate;
 
 ```
 
-### 0.3. Install the Populus Framework
+### 1.3. Install the Populus Framework
 
 Install `populus` and other requirements while in virtualenv:
 
@@ -61,7 +43,7 @@ pip install -r requirements.txt
 
 Yay! You should be able to develop Ethereum contracts in Python 3 now!
 
-## 1. Populus
+## 2. Populus
 
 All contracts are developed and tested using the Populus framework.
 
@@ -77,12 +59,43 @@ To run all the tests, use the following:
 python -m pytest --disable-pytest-warnings tests/*
 ```
 
-## 2. Danku Contracts
+## 3. Danku Contracts
 
 The DanKu contract can be found in the `contracts` directory.
 
-For more information about DanKu contracts, please read the [white paper](#).
+## 4. Celery
 
+Run each of the following command in different terminals
 
-Super User username: dsouzajess password:hello123
+```
+celery -A frontend worker -l info -Q low --pool threads
+celery -A frontend worker -l info -Q medium --pool threads
+celery -A frontend worker -l info -Q high --pool threads
+```
+
+## 5. Run IPFS Daemon
+
+```
+ipfs daemon
+```
+
+## 6. To create new accounts/manage your ethereum chain
+
+```
+geth attach /home/jessica/ml_exchange_project/chains/horton/chain_data/geth.ipc 
+```
+
+## 7. Run server
+
+```
+python manage.py runserver
+```
+
+## 8. Important Access Details
+
+#### Admin Credentials
+Super User username: dsouzajess 
+password:hello123
+
+#### Populus Chain Credentials
 Passwords for horton chain: account: seed 
