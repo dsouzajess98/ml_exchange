@@ -85,6 +85,13 @@ ipfs daemon
 geth attach /home/jessica/ml_exchange_project/chains/horton/chain_data/geth.ipc 
 ```
 
+## 7. Metamask
+
+### 7.1. Install Metamask Chrome extension
+Add the chain url, it generally is ```http://127.0.0.1:7545``` Remember to add the ```localhost:8080``` to connected sites in settings
+### 7.2  Add the accounts to Metamask
+Add the account name and password `seed`. Account name, you can find in ```chains/horton/chain_data/keystore```
+
 ## 7. Run server
 
 ```
