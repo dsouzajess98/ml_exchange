@@ -59,9 +59,9 @@ To run all the tests, use the following:
 python -m pytest --disable-pytest-warnings tests/*
 ```
 
-## 3. Danku Contracts
+## 3. ML Exchange Contracts
 
-The DanKu contract can be found in the `contracts` directory.
+The contracts can be found in the `contracts` directory.
 
 ## 4. Celery
 
@@ -92,13 +92,13 @@ Add the chain url, it generally is ```http://127.0.0.1:7545``` Remember to add t
 ### 7.2  Add the accounts to Metamask
 Add the account name and password `seed`. Account name, you can find in ```chains/horton/chain_data/keystore```
 
-## 7. Run server
+## 8. Run server
 
 ```
 npm run dev
 ```
 
-## 8. Important Access Details
+## 9. Important Access Details
 
 #### Admin Credentials
 Super User username: dsouzajess 
