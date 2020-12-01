@@ -95,7 +95,7 @@ Add the account name and password `seed`. Account name, you can find in ```chain
 ## 7. Run server
 
 ```
-python manage.py runserver
+npm run dev
 ```
 
 ## 8. Important Access Details
